@@ -19,20 +19,20 @@ public class NameAndSurnameGenerator {
     public static List<String> maleNameList    = new ArrayList();
     public static List<String> femaleNameList  = new ArrayList();
     
-    private static int sizeOfMaleNameList;    // = maleNameList  .size();
-    private static int sizeOfFemaleNameList;  // = femaleNameList.size();
+    private static int sizeOfMaleNameList;
+    private static int sizeOfFemaleNameList;
     
     private static List<String> surnameList = new ArrayList();
     
-    private static int sizeOfSurnameList; // = surnameList.size();
+    private static int sizeOfSurnameList;
     
     public static String getSurname() {
         return surnameList.get( RandomUtils.getRandomIntInZeroTo( sizeOfSurnameList ) );
     }
     
-    public static String getName( boolean isMale ) {
+    public static String getName( String sex ) {
         // 0 -> Female, 1 -> Male
-        if ( isMale ) {
+        if ( sex.equals("Male") ) {
             name = maleNameList.get( RandomUtils.getRandomIntInZeroTo( sizeOfMaleNameList ) );
         }
         else {

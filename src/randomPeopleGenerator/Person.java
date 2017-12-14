@@ -12,7 +12,7 @@ package randomPeopleGenerator;
 public class Person {
     
     private String  id;
-    private boolean sex;
+    private String  sex;
     private String  name;
     private String  surname;
     
@@ -21,7 +21,7 @@ public class Person {
     public Person() {
         
         this.id      = IdGenerator.getOneByDefault();
-        this.sex     = RandomUtils.getRandomBoolean();
+        this.sex     = RandomUtils.getRandomBoolean() == true? "Female" : "Male" ;
         this.name    = nameGen.getName( this.sex ); // Concordancy sex-name
         this.surname = nameGen.getSurname();
         
@@ -29,8 +29,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Id: " + id + "\nSex: " + (sex == true? "Male":"Female") + 
-                "\nName: " + name + "\nSurname: " + surname + "\n_ _ _ _ _ _ _ _ _\n\n";
+        return "Id: " + id + "\nSex: " + sex + "\nName: " + name + 
+          "\nSurname: " + surname + "\n_ _ _ _ _ _ _ _ _\n\n";
     }
     
 }
